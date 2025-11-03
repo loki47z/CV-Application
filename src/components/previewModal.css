@@ -1,0 +1,109 @@
+/* Modal overlay */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(2, 6, 23, 0.12);
+  z-index: 1000;
+  animation: fadeIn .14s ease;
+}
+
+/* Modal box (center) */
+.modal {
+  background: #fff;
+  border-radius: 10px;
+  max-width: 880px;
+  width: 92%;
+  max-height: 88vh;
+  overflow: auto;
+  box-shadow: 0 18px 40px rgba(2, 6, 23, 0.3);
+  padding: 22px;
+  position: relative;
+  transform-origin: center center;
+  animation: popIn .12s ease;
+}
+
+/* Right-side panel (feedback-style) */
+.modal-side {
+  position: fixed;
+  right: 24px;
+  top: 80px;
+  width: 340px;
+  max-height: calc(100vh - 120px);
+  overflow: auto;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 20px 50px rgba(2,6,23,0.2);
+  z-index: 1100;
+  padding: 0;
+}
+
+
+.modal-close {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  border: none;
+  background: transparent;
+  font-size: 22px;
+  cursor: pointer;
+  color: #374151;
+}
+
+.modal-close:hover {
+  color: #111827;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+}
+
+.modal-content section {
+  margin-bottom: 12px;
+  border-bottom: 1px dashed #eef2f6;
+  padding-bottom: 12px;
+}
+
+/* Inline preview and save button styling */
+.save-preview {
+  margin: 16px 0;
+}
+
+.save-button {
+  background: #0b67ff;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.save-button:hover {
+  filter: brightness(0.98);
+}
+
+.inline-preview {
+  margin-top: 12px;
+  padding: 12px;
+  border: 1px solid #eef2f7;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.inline-preview h2 {
+  margin-top: 0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+
+@keyframes popIn {
+  from { transform: scale(0.98); opacity: 0 }
+  to { transform: scale(1); opacity: 1 }
+}
+
+@media (max-width: 520px) {
+  .modal { padding: 14px; }
+  .modal-content section { padding-bottom: 8px; }
+}
